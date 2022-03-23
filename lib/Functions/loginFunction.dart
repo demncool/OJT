@@ -18,7 +18,7 @@ Future login(BuildContext cont) async {
         textColor: Colors.white,
         fontSize: 16.0);
   } else {
-    var url = "http://192.168.0.106/OJT/db_login.php";
+    var url = "http://192.168.0.100/OJT/db_login.php";
     var response = await http.post(Uri.parse(url), body: {
       "username": username.text,
       "password": password.text,
