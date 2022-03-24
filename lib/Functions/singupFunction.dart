@@ -19,7 +19,7 @@ Future signup(BuildContext cont) async {
         textColor: Colors.white,
         fontSize: 16.0);
   } else {
-    var url = "http://192.168.1.9/OJT/db_signup.php";
+    var url = "http://192.168.1.100/OJT/db_signup.php";
     var response = await http.post(Uri.parse(url), body: {
       "username": usernameSignup.text,
       "password": passwordSignup.text,
