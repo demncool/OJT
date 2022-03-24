@@ -615,102 +615,104 @@ class _DashboardBodyState extends State<DashboardBody> {
           shrinkWrap: true,
           padding: EdgeInsets.all(8),
           children: [
-            Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(24, 26, 27, 1),
-                      borderRadius: BorderRadius.all(Radius.circular(5))),
-                  child: Column(
-                    children: [
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          "HAPPY BIRTHDAY KAPATID!",
-                          style: GoogleFonts.poppins(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
+            Expanded(
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                    decoration: BoxDecoration(
+                        color: Color.fromRGBO(24, 26, 27, 1),
+                        borderRadius: BorderRadius.all(Radius.circular(5))),
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "HAPPY BIRTHDAY KAPATID!",
+                            style: GoogleFonts.poppins(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.announcement),
-                        iconColor: Color.fromRGBO(245, 178, 26, 1),
-                        title: Text(
-                          "BOBORJ",
-                          style: GoogleFonts.poppins(
-                            color: Color.fromRGBO(186, 180, 171, 1),
-                            fontWeight: FontWeight.bold,
+                        ListTile(
+                          leading: Icon(Icons.announcement),
+                          iconColor: Color.fromRGBO(245, 178, 26, 1),
+                          title: Text(
+                            "BOBORJ",
+                            style: GoogleFonts.poppins(
+                              color: Color.fromRGBO(186, 180, 171, 1),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: Text(
+                            "March 1st, 1971",
+                            textAlign: TextAlign.justify,
+                            style: GoogleFonts.poppins(
+                              color: Color.fromRGBO(186, 180, 171, 1),
+                            ),
                           ),
                         ),
-                        subtitle: Text(
-                          "March 1st, 1971",
-                          textAlign: TextAlign.justify,
-                          style: GoogleFonts.poppins(
-                            color: Color.fromRGBO(186, 180, 171, 1),
+                        ListTile(
+                          leading: Icon(Icons.announcement),
+                          iconColor: Color.fromRGBO(245, 178, 26, 1),
+                          title: Text(
+                            "BOBORJ",
+                            style: GoogleFonts.poppins(
+                              color: Color.fromRGBO(186, 180, 171, 1),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: Text(
+                            "March 1st, 1971",
+                            textAlign: TextAlign.justify,
+                            style: GoogleFonts.poppins(
+                              color: Color.fromRGBO(186, 180, 171, 1),
+                            ),
                           ),
                         ),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.announcement),
-                        iconColor: Color.fromRGBO(245, 178, 26, 1),
-                        title: Text(
-                          "BOBORJ",
-                          style: GoogleFonts.poppins(
-                            color: Color.fromRGBO(186, 180, 171, 1),
-                            fontWeight: FontWeight.bold,
+                        ListTile(
+                          leading: Icon(Icons.announcement),
+                          iconColor: Color.fromRGBO(245, 178, 26, 1),
+                          title: Text(
+                            "BOBORJ",
+                            style: GoogleFonts.poppins(
+                              color: Color.fromRGBO(186, 180, 171, 1),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: Text(
+                            "March 1st, 1971",
+                            textAlign: TextAlign.justify,
+                            style: GoogleFonts.poppins(
+                              color: Color.fromRGBO(186, 180, 171, 1),
+                            ),
                           ),
                         ),
-                        subtitle: Text(
-                          "March 1st, 1971",
-                          textAlign: TextAlign.justify,
-                          style: GoogleFonts.poppins(
-                            color: Color.fromRGBO(186, 180, 171, 1),
+                        ListTile(
+                          leading: Icon(Icons.announcement),
+                          iconColor: Color.fromRGBO(245, 178, 26, 1),
+                          title: Text(
+                            "BOBORJ",
+                            style: GoogleFonts.poppins(
+                              color: Color.fromRGBO(186, 180, 171, 1),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: Text(
+                            "March 1st, 1971",
+                            textAlign: TextAlign.justify,
+                            style: GoogleFonts.poppins(
+                              color: Color.fromRGBO(186, 180, 171, 1),
+                            ),
                           ),
                         ),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.announcement),
-                        iconColor: Color.fromRGBO(245, 178, 26, 1),
-                        title: Text(
-                          "BOBORJ",
-                          style: GoogleFonts.poppins(
-                            color: Color.fromRGBO(186, 180, 171, 1),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        subtitle: Text(
-                          "March 1st, 1971",
-                          textAlign: TextAlign.justify,
-                          style: GoogleFonts.poppins(
-                            color: Color.fromRGBO(186, 180, 171, 1),
-                          ),
-                        ),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.announcement),
-                        iconColor: Color.fromRGBO(245, 178, 26, 1),
-                        title: Text(
-                          "BOBORJ",
-                          style: GoogleFonts.poppins(
-                            color: Color.fromRGBO(186, 180, 171, 1),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        subtitle: Text(
-                          "March 1st, 1971",
-                          textAlign: TextAlign.justify,
-                          style: GoogleFonts.poppins(
-                            color: Color.fromRGBO(186, 180, 171, 1),
-                          ),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),
