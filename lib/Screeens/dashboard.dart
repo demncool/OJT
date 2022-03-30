@@ -1,5 +1,8 @@
 // ignore_for_file: prefer_const_constructors, non_constant_identifier_names, prefer_adjacent_string_concatenation
 
+import 'dart:ffi';
+
+import 'package:application/Screeens/login.dart';
 import 'package:application/Screeens/timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -116,7 +119,10 @@ class _DashboardState extends State<Dashboard> {
               ),
               title: Text('Logout',
                   style: TextStyle(fontSize: 20, color: Colors.white)),
-              onTap: () => {Navigator.of(context).pop()},
+              onTap: () => {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Login()))
+              },
             ),
           ],
         ),
@@ -205,9 +211,12 @@ class _DashboardBodyState extends State<DashboardBody> {
                     borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: Column(
                   children: [
-                    Image.asset(
-                      "assets/images/HOG QR.png",
-                      fit: BoxFit.fill,
+                    TextButton(
+                      onPressed: () {},
+                      child: Image.asset(
+                        "assets/images/HOG QR.png",
+                        fit: BoxFit.fill,
+                      ),
                     ),
                     Row(
                       children: [
@@ -612,6 +621,14 @@ class _DashboardBodyState extends State<DashboardBody> {
           ListView(
             shrinkWrap: true,
             children: [
+              Text(
+                "HAPPY BIRTHDAY KAPATID!",
+                style: GoogleFonts.poppins(
+                  color: Color.fromRGBO(186, 180, 171, 1),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
               Container(
                 decoration: BoxDecoration(
                     color: Colors.white,

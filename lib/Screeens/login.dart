@@ -98,6 +98,8 @@ class Login extends StatelessWidget {
                           shape: const StadiumBorder()),
                       onPressed: () {
                         login(context);
+                        username.clear();
+                        password.clear();
                       },
                       child: const Text('Sign in'),
                     ),
