@@ -3,6 +3,7 @@
 import 'dart:ffi';
 
 import 'package:application/Screeens/login.dart';
+import 'package:application/Screeens/payment.dart';
 import 'package:application/Screeens/timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -58,14 +59,17 @@ class _DashboardState extends State<Dashboard> {
             ),
             ListTile(
               leading: Icon(
-                Icons.money,
+                Icons.payment,
                 color: Colors.white,
               ),
               title: Text(
                 'Proof of Payment',
                 style: TextStyle(fontSize: 20, color: Colors.white),
               ),
-              onTap: () => {Navigator.of(context).pop()},
+              onTap: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ProofOfPayment()))
+              },
             ),
             ListTile(
               leading: Icon(
