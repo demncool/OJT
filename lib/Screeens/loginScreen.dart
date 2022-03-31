@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:application/Screeens/signup.dart';
+import 'package:application/Screeens/signupScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../Functions/loginFunction.dart';
@@ -29,7 +29,7 @@ class Login extends StatelessWidget {
                   height: 120,
                 ),
                 Image.asset(
-                  'assets/images/try.jpg',
+                  'assets/images/hogLogo.jpg',
                   height: 100,
                 ),
                 const SizedBox(

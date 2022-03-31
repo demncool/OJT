@@ -1,9 +1,9 @@
 import 'dart:convert';
-import 'package:application/Screeens/login.dart';
+import 'package:application/Screeens/loginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
-import 'package:application/Screeens/dashboard.dart';
+import 'package:application/Screeens/dashboardScreen.dart';
 
 TextEditingController usernameSignup = TextEditingController();
 TextEditingController passwordSignup = TextEditingController();

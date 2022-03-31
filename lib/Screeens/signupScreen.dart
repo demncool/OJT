@@ -22,7 +22,7 @@ class Signup extends StatelessWidget {
               height: 100,
             ),
             const Image(
-              image: AssetImage('assets/images/try.jpg'),
+              image: AssetImage('assets/images/hogLogo.jpg'),
               width: 150,
             ),
             const SizedBox(

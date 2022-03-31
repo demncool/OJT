@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
-import 'package:application/Screeens/login.dart';
+import 'package:application/Screeens/loginScreen.dart';
 import 'package:flutter/material.dart';
 
-import 'Screeens/login.dart';
+import 'Screeens/loginScreen.dart';
 
 void main() => runApp(App());
 

@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
-import 'package:application/Screeens/dashboard.dart';
+import 'package:application/Screeens/dashboardScreen.dart';
 
 TextEditingController username = TextEditingController();
 TextEditingController password = TextEditingController();

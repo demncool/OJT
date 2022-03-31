@@ -2,7 +2,7 @@
 
 import 'dart:ffi';
 
-import 'package:application/Screeens/showdialog.dart';
+import 'package:application/Screeens/showdialogScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -22,7 +22,7 @@ class _TimelineState extends State<Timeline> {
         title: Row(
           children: [
             Image.asset(
-              "assets/images/try.jpg",
+              "assets/images/hogLogo.jpg",
               height: 50,
               // fit: BoxFit.scaleDown,
             ),

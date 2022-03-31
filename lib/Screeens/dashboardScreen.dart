@@ -2,9 +2,10 @@
 
 import 'dart:ffi';
 
-import 'package:application/Screeens/login.dart';
-import 'package:application/Screeens/payment.dart';
-import 'package:application/Screeens/timeline.dart';
+import 'package:application/Screeens/loginScreen.dart';
+import 'package:application/Screeens/paymentScreen.dart';
+import 'package:application/Screeens/reportScreen.dart';
+import 'package:application/Screeens/timelineScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -35,14 +36,17 @@ class _DashboardState extends State<Dashboard> {
         backgroundColor: Color.fromRGBO(245, 178, 26, 1),
         child: Column(
           children: [
-            DrawerHeader(
-              child: Padding(
-                padding: EdgeInsets.all(150),
-              ),
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(19, 22, 40, 1),
-                image:
-                    DecorationImage(image: AssetImage("assets/images/try.jpg")),
+            Expanded(
+              flex: 1,
+              child: DrawerHeader(
+                child: Padding(
+                  padding: EdgeInsets.all(150),
+                ),
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(19, 22, 40, 1),
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/hogLogo.jpg")),
+                ),
               ),
             ),
             ListTile(
@@ -80,14 +84,74 @@ class _DashboardState extends State<Dashboard> {
                   style: TextStyle(fontSize: 20, color: Colors.white)),
               onTap: () => {Navigator.of(context).pop()},
             ),
-            ListTile(
+            ExpansionTile(
               leading: Icon(
                 Icons.person,
                 color: Colors.white,
               ),
-              title: Text('Member',
-                  style: TextStyle(fontSize: 20, color: Colors.white)),
-              onTap: () => {Navigator.of(context).pop()},
+              title: Text(
+                'Member',
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              ),
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.arrow_right,
+                      color: Colors.white,
+                    ),
+                    title: Text('Applicant',
+                        style: TextStyle(fontSize: 15, color: Colors.white)),
+                    onTap: () {},
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.arrow_right,
+                      color: Colors.white,
+                    ),
+                    title: Text('Applicant',
+                        style: TextStyle(fontSize: 15, color: Colors.white)),
+                    onTap: () {},
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.arrow_right,
+                      color: Colors.white,
+                    ),
+                    title: Text('Member',
+                        style: TextStyle(fontSize: 15, color: Colors.white)),
+                    onTap: () {},
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.arrow_right,
+                      color: Colors.white,
+                    ),
+                    title: Text('Disband',
+                        style: TextStyle(fontSize: 15, color: Colors.white)),
+                    onTap: () {},
+                  ),
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.arrow_right,
+                    color: Colors.white,
+                  ),
+                  title: Text('Near Expiration',
+                      style: TextStyle(fontSize: 15, color: Colors.white)),
+                  onTap: () {},
+                ),
+              ],
             ),
             ListTile(
               leading: Icon(
@@ -96,7 +160,10 @@ class _DashboardState extends State<Dashboard> {
               ),
               title: Text('Reports',
                   style: TextStyle(fontSize: 20, color: Colors.white)),
-              onTap: () => {Navigator.of(context).pop()},
+              onTap: () => {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Report()))
+              },
             ),
             ListTile(
               leading: Icon(
