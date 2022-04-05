@@ -1,7 +1,9 @@
-// ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:intl/intl.dart';
 
 class Report extends StatefulWidget {
   const Report({Key? key}) : super(key: key);
@@ -27,6 +29,18 @@ List months = [
 var now = DateTime.now();
 var current_mon = now.month;
 var currentDate = now.day;
+
+List<String> items = [
+  "Applicant Report",
+  "Probi Report",
+  "Member",
+  "All Member",
+  "Nearly Expired Member",
+  "Event Report",
+  "Registered Members",
+  "Active Login Members"
+];
+String? selected;
 
 class _ReportState extends State<Report> {
   @override
@@ -170,14 +184,14 @@ class _ReportBodyState extends State<ReportBody> {
                           Text(
                             "Report",
                             style: GoogleFonts.poppins(
-                              fontSize: 12,
+                              fontSize: 15,
                               color: Color.fromRGBO(186, 180, 171, 1),
                             ),
                           ),
                           DropdownButtonFormField<String>(
                             style: TextStyle(
                                 color: Color.fromARGB(255, 224, 218, 218),
-                                fontSize: 13),
+                                fontSize: 14),
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5),
@@ -192,7 +206,7 @@ class _ReportBodyState extends State<ReportBody> {
                               "Select",
                               style: GoogleFonts.poppins(
                                 color: Color.fromRGBO(186, 180, 171, 1),
-                                fontSize: 12,
+                                fontSize: 15,
                               ),
                             ),
                             value: selected,
@@ -206,6 +220,17 @@ class _ReportBodyState extends State<ReportBody> {
                               () => selected = items,
                             ),
                           ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "Start Date",
+                            style: GoogleFonts.poppins(
+                              fontSize: 15,
+                              color: Color.fromRGBO(186, 180, 171, 1),
+                            ),
+                          ),
+                          StartDate(),
                         ],
                       ),
                     ),
@@ -220,14 +245,68 @@ class _ReportBodyState extends State<ReportBody> {
   }
 }
 
-List<String> items = [
-  "Applicant Report",
-  "Probi Report",
-  "Member",
-  "All Member",
-  "Nearly Expired Member",
-  "Event Report",
-  "Registered Members",
-  "Active Login Members"
-];
-String? selected;
+class StartDate extends StatefulWidget {
+  const StartDate({Key? key}) : super(key: key);
+
+  @override
+  State<StartDate> createState() => _StartDateState();
+}
+
+class _StartDateState extends State<StartDate> {
+  DateTime startDate = now;
+  String start = "Select date";
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        border: Border.all(
+          color: Color.fromARGB(255, 31, 79, 117),
+        ),
+      ),
+      child: Column(
+        children: [
+          TextButton(
+            onPressed: () async {
+              startDate = (await showDatePicker(
+                context: context,
+                initialDate: DateTime.now(),
+                firstDate: DateTime(1990),
+                lastDate: DateTime(2023),
+              ))!;
+              setState(() {
+                start = DateFormat('MM-dd-yyyy').format(startDate);
+              });
+            },
+            child: Text(
+              start,
+              style: GoogleFonts.poppins(
+                color: Color.fromRGBO(186, 180, 171, 1),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+
+//  TextButton(
+//         onPressed: () {
+//           DatePicker.showDatePicker(context,
+//               showTitleActions: true,
+//               minTime: DateTime(2018, 3, 5),
+//               maxTime: DateTime(2019, 6, 7), onChanged: (date) {
+//             print('change $date');
+//           }, onConfirm: (date) {
+//             print('confirm $date');
+//           }, currentTime: DateTime.now(), locale: LocaleType.en);
+//         },
+//         child: Text(
+//           'show date time picker (Chinese)',
+//           style: TextStyle(color: Colors.blue),
+//         ));
