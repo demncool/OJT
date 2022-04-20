@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, non_constant_identifier_names, prefer_adjacent_string_concatenation, file_names
 
+import 'dart:math';
+
 import 'package:application/Screeens/announcementScreen.dart';
 import 'package:application/Screeens/loginScreen.dart';
 import 'package:application/Screeens/paymentScreen.dart';
@@ -7,6 +9,8 @@ import 'package:application/Screeens/reportScreen.dart';
 import 'package:application/Screeens/timelineScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'applicantScreen.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -16,6 +20,32 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  int key = 0;
+
+  collapse() {
+    int newKey = 0;
+    do {
+      key = Random().nextInt(10000);
+    } while (newKey == key);
+  }
+
+//------------------------------------
+
+  int keySetup = 0;
+
+  collapseSetup() {
+    int newKeySetup = 0;
+    do {
+      keySetup = Random().nextInt(10000);
+    } while (newKeySetup == keySetup);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    collapse();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,180 +62,266 @@ class _DashboardState extends State<Dashboard> {
       //19, 22, 40, 1
       drawer: Drawer(
         backgroundColor: Color.fromRGBO(245, 178, 26, 1),
-        child: Column(
-          children: [
-            Expanded(
-              flex: 1,
-              child: DrawerHeader(
-                child: Padding(
-                  padding: EdgeInsets.all(150),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              Container(
+                height: 300,
+                child: DrawerHeader(
+                  child: Padding(
+                    padding: EdgeInsets.all(150),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(19, 22, 40, 1),
+                    image: DecorationImage(
+                        image: AssetImage("assets/images/hogLogo.jpg")),
+                  ),
                 ),
-                decoration: BoxDecoration(
-                  color: Color.fromRGBO(19, 22, 40, 1),
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/hogLogo.jpg")),
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.timeline,
+                  color: Colors.white,
                 ),
+                title: Text('Timeline',
+                    style: TextStyle(fontSize: 20, color: Colors.white)),
+                onTap: () => {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Timeline()))
+                },
               ),
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.timeline,
-                color: Colors.white,
+              ListTile(
+                leading: Icon(
+                  Icons.payment,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'Proof of Payment',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+                onTap: () => {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ProofOfPayment()))
+                },
               ),
-              title: Text('Timeline',
-                  style: TextStyle(fontSize: 20, color: Colors.white)),
-              onTap: () => {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Timeline()))
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.payment,
-                color: Colors.white,
+              ListTile(
+                leading: Icon(
+                  Icons.people,
+                  color: Colors.white,
+                ),
+                title: Text('Profile',
+                    style: TextStyle(fontSize: 20, color: Colors.white)),
+                onTap: () => {Navigator.of(context).pop()},
               ),
-              title: Text(
-                'Proof of Payment',
-                style: TextStyle(fontSize: 20, color: Colors.white),
-              ),
-              onTap: () => {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ProofOfPayment()))
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.people,
-                color: Colors.white,
-              ),
-              title: Text('Profile',
-                  style: TextStyle(fontSize: 20, color: Colors.white)),
-              onTap: () => {Navigator.of(context).pop()},
-            ),
-            ExpansionTile(
-              leading: Icon(
-                Icons.person,
-                color: Colors.white,
-              ),
-              title: Text(
-                'Member',
-                style: TextStyle(fontSize: 20, color: Colors.white),
-              ),
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                  child: ListTile(
+              ExpansionTile(
+                key: Key(key.toString()),
+                initiallyExpanded: false,
+                leading: Icon(
+                  Icons.person,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'Member',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.arrow_right,
+                        color: Colors.white,
+                      ),
+                      title: Text('Applicant',
+                          style: TextStyle(fontSize: 15, color: Colors.white)),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => Applicant())));
+                        setState(() {
+                          collapse();
+                        });
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.arrow_right,
+                        color: Colors.white,
+                      ),
+                      title: Text('Probies',
+                          style: TextStyle(fontSize: 15, color: Colors.white)),
+                      onTap: () {
+                        setState(() {
+                          collapse();
+                        });
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.arrow_right,
+                        color: Colors.white,
+                      ),
+                      title: Text('Member',
+                          style: TextStyle(fontSize: 15, color: Colors.white)),
+                      onTap: () {
+                        setState(() {
+                          collapse();
+                        });
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.arrow_right,
+                        color: Colors.white,
+                      ),
+                      title: Text('Disband',
+                          style: TextStyle(fontSize: 15, color: Colors.white)),
+                      onTap: () {
+                        setState(() {
+                          collapse();
+                        });
+                      },
+                    ),
+                  ),
+                  ListTile(
                     leading: Icon(
                       Icons.arrow_right,
                       color: Colors.white,
                     ),
-                    title: Text('Applicant',
+                    title: Text('Near Expiration',
                         style: TextStyle(fontSize: 15, color: Colors.white)),
-                    onTap: () {},
+                    onTap: () {
+                      setState(() {
+                        collapse();
+                      });
+                    },
                   ),
+                ],
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.report,
+                  color: Colors.white,
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.arrow_right,
-                      color: Colors.white,
+                title: Text('Reports',
+                    style: TextStyle(fontSize: 20, color: Colors.white)),
+                onTap: () => {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Report()))
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.add_alert_sharp,
+                  color: Colors.white,
+                ),
+                title: Text('Announcement',
+                    style: TextStyle(fontSize: 20, color: Colors.white)),
+                onTap: () => {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Announcement()))
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.event,
+                  color: Colors.white,
+                ),
+                title: Text('Event',
+                    style: TextStyle(fontSize: 20, color: Colors.white)),
+                onTap: () => {Navigator.of(context).pop()},
+              ),
+              ExpansionTile(
+                key: Key(keySetup.toString()),
+                initiallyExpanded: false,
+                leading: Icon(
+                  Icons.settings,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'Setup',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.arrow_right,
+                        color: Colors.white,
+                      ),
+                      title: Text('Access Right',
+                          style: TextStyle(fontSize: 15, color: Colors.white)),
+                      onTap: () {
+                        setState(() {
+                          collapse();
+                        });
+                      },
                     ),
-                    title: Text('Probies',
-                        style: TextStyle(fontSize: 15, color: Colors.white)),
-                    onTap: () {},
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.arrow_right,
-                      color: Colors.white,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.arrow_right,
+                        color: Colors.white,
+                      ),
+                      title: Text('Users',
+                          style: TextStyle(fontSize: 15, color: Colors.white)),
+                      onTap: () {},
                     ),
-                    title: Text('Member',
-                        style: TextStyle(fontSize: 15, color: Colors.white)),
-                    onTap: () {},
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.arrow_right,
-                      color: Colors.white,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.arrow_right,
+                        color: Colors.white,
+                      ),
+                      title: Text('ID Printing',
+                          style: TextStyle(fontSize: 15, color: Colors.white)),
+                      onTap: () {},
                     ),
-                    title: Text('Disband',
-                        style: TextStyle(fontSize: 15, color: Colors.white)),
-                    onTap: () {},
                   ),
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.arrow_right,
-                    color: Colors.white,
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.arrow_right,
+                        color: Colors.white,
+                      ),
+                      title: Text('Audit Trial',
+                          style: TextStyle(fontSize: 15, color: Colors.white)),
+                      onTap: () {},
+                    ),
                   ),
-                  title: Text('Near Expiration',
-                      style: TextStyle(fontSize: 15, color: Colors.white)),
-                  onTap: () {},
+                ],
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.exit_to_app,
+                  color: Colors.white,
                 ),
-              ],
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.report,
-                color: Colors.white,
+                title: Text('Logout',
+                    style: TextStyle(fontSize: 20, color: Colors.white)),
+                onTap: () => {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Login()))
+                },
               ),
-              title: Text('Reports',
-                  style: TextStyle(fontSize: 20, color: Colors.white)),
-              onTap: () => {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Report()))
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.add_alert_sharp,
-                color: Colors.white,
-              ),
-              title: Text('Announcement',
-                  style: TextStyle(fontSize: 20, color: Colors.white)),
-              onTap: () => {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Announcement()))
-              },
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.event,
-                color: Colors.white,
-              ),
-              title: Text('Event',
-                  style: TextStyle(fontSize: 20, color: Colors.white)),
-              onTap: () => {Navigator.of(context).pop()},
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.settings,
-                color: Colors.white,
-              ),
-              title: Text('Setup',
-                  style: TextStyle(fontSize: 20, color: Colors.white)),
-              onTap: () => {Navigator.of(context).pop()},
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.exit_to_app,
-                color: Colors.white,
-              ),
-              title: Text('Logout',
-                  style: TextStyle(fontSize: 20, color: Colors.white)),
-              onTap: () => {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Login()))
-              },
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       body: DashboardBody(),

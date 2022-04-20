@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 
-import 'package:application/Functions/LingupFunction.dart';
+import 'package:application/Functions/SignupFunction.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

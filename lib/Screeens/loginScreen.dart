@@ -38,12 +38,12 @@ class Login extends StatelessWidget {
                 Text(
                   'Sign In',
                   style: GoogleFonts.poppins(
-                      fontSize: 30, color: Color.fromARGB(209, 205, 199, 1)),
+                      fontSize: 30, color: Color.fromRGBO(232, 230, 227, 1.5)),
                 ),
                 Text(
                   'Enter your details to login to your account',
                   style: GoogleFonts.poppins(
-                      fontSize: 12, color: Color.fromARGB(209, 205, 199, 1)),
+                      fontSize: 12, color: Color.fromRGBO(232, 230, 227, 1.5)),
                 ),
                 const SizedBox(
                   height: 10,
@@ -52,10 +52,9 @@ class Login extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
                   child: TextField(
                     controller: username,
-                    style: const TextStyle(
-                        color: Color.fromARGB(255, 224, 218, 218)),
+                    style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
-                      fillColor: const Color.fromARGB(255, 255, 255, 255)
+                      fillColor: const Color.fromRGBO(255, 255, 255, 255)
                           .withOpacity(0.1),
                       filled: true,
                       border: const OutlineInputBorder(
@@ -64,7 +63,7 @@ class Login extends StatelessWidget {
                       labelStyle: GoogleFonts.poppins(
                         fontStyle: FontStyle.italic,
                         fontSize: 15,
-                        color: Color.fromARGB(209, 205, 199, 1),
+                        color: Color.fromRGBO(232, 230, 227, 1.5),
                       ),
                     ),
                   ),
@@ -74,10 +73,9 @@ class Login extends StatelessWidget {
                   child: TextField(
                     controller: password,
                     obscureText: true,
-                    style: GoogleFonts.poppins(
-                        color: Color.fromARGB(255, 224, 218, 218)),
+                    style: GoogleFonts.poppins(color: Colors.white),
                     decoration: InputDecoration(
-                      fillColor: const Color.fromARGB(255, 255, 255, 255)
+                      fillColor: const Color.fromRGBO(255, 255, 255, 255)
                           .withOpacity(0.1),
                       filled: true,
                       border: const OutlineInputBorder(
@@ -86,7 +84,7 @@ class Login extends StatelessWidget {
                       labelStyle: const TextStyle(
                         fontStyle: FontStyle.italic,
                         fontSize: 15,
-                        color: Color.fromARGB(209, 205, 199, 1),
+                        color: Color.fromRGBO(232, 230, 227, 1.5),
                       ),
                     ),
                   ),
