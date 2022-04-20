@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, file_names
 
 import 'package:application/Screeens/signupScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../Functions/loginFunction.dart';
+import '../Functions/LoginFunction.dart';
 
 // ignore: must_be_immutable
 class Login extends StatelessWidget {
@@ -38,12 +38,12 @@ class Login extends StatelessWidget {
                 Text(
                   'Sign In',
                   style: GoogleFonts.poppins(
-                      fontSize: 30, color: Color.fromARGB(255, 201, 193, 193)),
+                      fontSize: 30, color: Color.fromARGB(209, 205, 199, 1)),
                 ),
                 Text(
                   'Enter your details to login to your account',
                   style: GoogleFonts.poppins(
-                      fontSize: 12, color: Color.fromARGB(255, 201, 193, 193)),
+                      fontSize: 12, color: Color.fromARGB(209, 205, 199, 1)),
                 ),
                 const SizedBox(
                   height: 10,
@@ -64,7 +64,7 @@ class Login extends StatelessWidget {
                       labelStyle: GoogleFonts.poppins(
                         fontStyle: FontStyle.italic,
                         fontSize: 15,
-                        color: Color.fromARGB(255, 201, 193, 193),
+                        color: Color.fromARGB(209, 205, 199, 1),
                       ),
                     ),
                   ),
@@ -86,7 +86,7 @@ class Login extends StatelessWidget {
                       labelStyle: const TextStyle(
                         fontStyle: FontStyle.italic,
                         fontSize: 15,
-                        color: Color.fromARGB(255, 201, 193, 193),
+                        color: Color.fromARGB(209, 205, 199, 1),
                       ),
                     ),
                   ),

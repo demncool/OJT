@@ -1,14 +1,12 @@
-// ignore_for_file: prefer_const_constructors, non_constant_identifier_names, prefer_adjacent_string_concatenation
+// ignore_for_file: prefer_const_constructors, non_constant_identifier_names, prefer_adjacent_string_concatenation, file_names
 
-import 'dart:ffi';
-
+import 'package:application/Screeens/announcementScreen.dart';
 import 'package:application/Screeens/loginScreen.dart';
 import 'package:application/Screeens/paymentScreen.dart';
 import 'package:application/Screeens/reportScreen.dart';
 import 'package:application/Screeens/timelineScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -107,19 +105,19 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
                   child: ListTile(
                     leading: Icon(
                       Icons.arrow_right,
                       color: Colors.white,
                     ),
-                    title: Text('Applicant',
+                    title: Text('Probies',
                         style: TextStyle(fontSize: 15, color: Colors.white)),
                     onTap: () {},
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
                   child: ListTile(
                     leading: Icon(
                       Icons.arrow_right,
@@ -131,7 +129,7 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
                   child: ListTile(
                     leading: Icon(
                       Icons.arrow_right,
@@ -163,6 +161,18 @@ class _DashboardState extends State<Dashboard> {
               onTap: () => {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (context) => Report()))
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.add_alert_sharp,
+                color: Colors.white,
+              ),
+              title: Text('Announcement',
+                  style: TextStyle(fontSize: 20, color: Colors.white)),
+              onTap: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Announcement()))
               },
             ),
             ListTile(
@@ -299,7 +309,7 @@ class _DashboardBodyState extends State<DashboardBody> {
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
                               fontSize: 12,
-                              color: Color.fromRGBO(186, 180, 171, 1)),
+                              color: Color.fromRGBO(209, 205, 199, 1)),
                         ),
                       ],
                     ),
@@ -336,7 +346,7 @@ class _DashboardBodyState extends State<DashboardBody> {
                         Text(
                           "Probies: ",
                           style: GoogleFonts.poppins(
-                              color: Color.fromRGBO(186, 180, 171, 1),
+                              color: Color.fromRGBO(209, 205, 199, 1),
                               fontSize: 20),
                         ),
                       ],
@@ -347,7 +357,7 @@ class _DashboardBodyState extends State<DashboardBody> {
                             textAlign: TextAlign.start,
                             style: GoogleFonts.poppins(
                               fontSize: 12,
-                              color: Color.fromRGBO(186, 180, 171, 1),
+                              color: Color.fromRGBO(209, 205, 199, 1),
                             )),
                       ],
                     )
@@ -389,7 +399,7 @@ class _DashboardBodyState extends State<DashboardBody> {
                         Text(
                           "Members: ",
                           style: GoogleFonts.poppins(
-                              color: Color.fromRGBO(186, 180, 171, 1),
+                              color: Color.fromRGBO(209, 205, 199, 1),
                               fontSize: 20),
                         ),
                       ],
@@ -400,7 +410,7 @@ class _DashboardBodyState extends State<DashboardBody> {
                             textAlign: TextAlign.start,
                             style: GoogleFonts.poppins(
                               fontSize: 12,
-                              color: Color.fromRGBO(186, 180, 171, 1),
+                              color: Color.fromRGBO(209, 205, 199, 1),
                             )),
                       ],
                     ),
@@ -437,7 +447,7 @@ class _DashboardBodyState extends State<DashboardBody> {
                         Text(
                           "Applicants: ",
                           style: GoogleFonts.poppins(
-                              color: Color.fromRGBO(186, 180, 171, 1),
+                              color: Color.fromRGBO(209, 205, 199, 1),
                               fontSize: 20),
                         ),
                       ],
@@ -448,7 +458,7 @@ class _DashboardBodyState extends State<DashboardBody> {
                             textAlign: TextAlign.start,
                             style: GoogleFonts.poppins(
                               fontSize: 12,
-                              color: Color.fromRGBO(186, 180, 171, 1),
+                              color: Color.fromRGBO(209, 205, 199, 1),
                             )),
                       ],
                     ),
@@ -555,7 +565,7 @@ class _DashboardBodyState extends State<DashboardBody> {
                                       "Our meals will be served at facilities exclusive.",
                                   textAlign: TextAlign.justify,
                                   style: GoogleFonts.poppins(
-                                    color: Color.fromRGBO(186, 180, 171, 1),
+                                    color: Color.fromRGBO(209, 205, 199, 1),
                                   ),
                                 ),
                                 trailing: IconButton(
@@ -585,7 +595,7 @@ class _DashboardBodyState extends State<DashboardBody> {
                                   "H.O.G. Manila Chapter Philippines Inc For uniformity of photo/s in our website: For Officers, Members and Proby/ies Applicants there will be two scheduled pictorials. Said photo will be uploaded in the website. Those members who have pictures pos",
                                   textAlign: TextAlign.justify,
                                   style: GoogleFonts.poppins(
-                                    color: Color.fromRGBO(186, 180, 171, 1),
+                                    color: Color.fromRGBO(209, 205, 199, 1),
                                   ),
                                 ),
                                 trailing: IconButton(
@@ -615,7 +625,7 @@ class _DashboardBodyState extends State<DashboardBody> {
                                   "H.O.G. Manila Chapter Philippines Inc For uniformity of photo/s in our website: For Officers, Members and Proby/ies Applicants there will be two scheduled pictorials. Said photo will be uploaded in the website. Those members who have pictures pos",
                                   textAlign: TextAlign.justify,
                                   style: GoogleFonts.poppins(
-                                    color: Color.fromRGBO(186, 180, 171, 1),
+                                    color: Color.fromRGBO(209, 205, 199, 1),
                                   ),
                                 ),
                                 trailing: IconButton(
@@ -650,7 +660,7 @@ class _DashboardBodyState extends State<DashboardBody> {
                               "Our meals will be served at facilities exclusive.",
                           textAlign: TextAlign.justify,
                           style: GoogleFonts.poppins(
-                            color: Color.fromRGBO(186, 180, 171, 1),
+                            color: Color.fromRGBO(209, 205, 199, 1),
                           ),
                         ),
                         trailing: IconButton(
@@ -695,7 +705,7 @@ class _DashboardBodyState extends State<DashboardBody> {
               Text(
                 "HAPPY BIRTHDAY KAPATID!",
                 style: GoogleFonts.poppins(
-                  color: Color.fromRGBO(186, 180, 171, 1),
+                  color: Color.fromRGBO(209, 205, 199, 1),
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
@@ -711,7 +721,7 @@ class _DashboardBodyState extends State<DashboardBody> {
                     title: Text(
                       "BOBORJ",
                       style: GoogleFonts.poppins(
-                        color: Color.fromRGBO(186, 180, 171, 1),
+                        color: Color.fromRGBO(209, 205, 199, 1),
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -719,7 +729,7 @@ class _DashboardBodyState extends State<DashboardBody> {
                       "March 1st, 1971",
                       textAlign: TextAlign.justify,
                       style: GoogleFonts.poppins(
-                        color: Color.fromRGBO(186, 180, 171, 1),
+                        color: Color.fromRGBO(209, 205, 199, 1),
                       ),
                     ),
                   ),
@@ -736,7 +746,7 @@ class _DashboardBodyState extends State<DashboardBody> {
                     title: Text(
                       "BOBORJ",
                       style: GoogleFonts.poppins(
-                        color: Color.fromRGBO(186, 180, 171, 1),
+                        color: Color.fromRGBO(209, 205, 199, 1),
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -744,14 +754,14 @@ class _DashboardBodyState extends State<DashboardBody> {
                       "March 1st, 1971",
                       textAlign: TextAlign.justify,
                       style: GoogleFonts.poppins(
-                        color: Color.fromRGBO(186, 180, 171, 1),
+                        color: Color.fromRGBO(209, 205, 199, 1),
                       ),
                     ),
                   ),
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );

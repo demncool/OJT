@@ -1,7 +1,6 @@
-// ignore: file_names
-import 'dart:async';
-import 'dart:io';
+// ignore_for_file: file_names
 
+import 'dart:io';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:path_provider/path_provider.dart';
 

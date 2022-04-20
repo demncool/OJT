@@ -1,6 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names
-
-import 'dart:ffi';
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names, file_names
 
 import 'package:application/Screeens/showdialogScreen.dart';
 import 'package:flutter/material.dart';
@@ -130,7 +128,7 @@ class _TimelineBodyState extends State<TimelineBody> {
                             "What's on your mind?",
                             style: GoogleFonts.poppins(
                                 fontSize: 20,
-                                color: Color.fromRGBO(186, 180, 171, 1)),
+                                color: Color.fromRGBO(209, 205, 199, 1)),
                           ),
                         ),
                       ],
@@ -148,13 +146,13 @@ class _TimelineBodyState extends State<TimelineBody> {
                           openDialog(context);
                         },
                         style: TextStyle(
-                          color: Color.fromARGB(255, 224, 218, 218),
+                          color: Color.fromARGB(209, 205, 199, 1),
                         ),
                         decoration: InputDecoration(
                           border: UnderlineInputBorder(),
                           hintText: 'Type Message...',
                           hintStyle: TextStyle(
-                              color: Color.fromARGB(255, 224, 218, 218)),
+                              color: Color.fromARGB(209, 205, 199, 1)),
                         ),
                       ),
                     )
