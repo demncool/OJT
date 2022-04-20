@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
 
 class Report extends StatefulWidget {
@@ -144,7 +143,7 @@ class _ReportBodyState extends State<ReportBody> {
                             "Report",
                             style: GoogleFonts.poppins(
                               fontSize: 20,
-                              color: Color.fromRGBO(186, 180, 171, 1),
+                              color: Color.fromRGBO(209, 205, 199, 1),
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -152,7 +151,7 @@ class _ReportBodyState extends State<ReportBody> {
                             "Hog Reports",
                             style: GoogleFonts.poppins(
                               fontSize: 15,
-                              color: Color.fromRGBO(186, 180, 171, 1),
+                              color: Color.fromRGBO(209, 205, 199, 1),
                             ),
                           ),
                         ],
@@ -185,7 +184,7 @@ class _ReportBodyState extends State<ReportBody> {
                             "Report",
                             style: GoogleFonts.poppins(
                               fontSize: 15,
-                              color: Color.fromRGBO(186, 180, 171, 1),
+                              color: Color.fromRGBO(209, 205, 199, 1),
                             ),
                           ),
                           DropdownButtonFormField<String>(
@@ -205,7 +204,7 @@ class _ReportBodyState extends State<ReportBody> {
                             hint: Text(
                               "Select",
                               style: GoogleFonts.poppins(
-                                color: Color.fromRGBO(186, 180, 171, 1),
+                                color: Color.fromRGBO(209, 205, 199, 1),
                                 fontSize: 15,
                               ),
                             ),
@@ -227,10 +226,25 @@ class _ReportBodyState extends State<ReportBody> {
                             "Start Date",
                             style: GoogleFonts.poppins(
                               fontSize: 15,
-                              color: Color.fromRGBO(186, 180, 171, 1),
+                              color: Color.fromRGBO(209, 205, 199, 1),
                             ),
                           ),
                           StartDate(),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "End Date",
+                            style: GoogleFonts.poppins(
+                              fontSize: 15,
+                              color: Color.fromRGBO(209, 205, 199, 1),
+                            ),
+                          ),
+                          EndDate(),
+                          SizedBox(
+                            height: 50,
+                          ),
+                          SumbitButton(),
                         ],
                       ),
                     ),
@@ -245,6 +259,7 @@ class _ReportBodyState extends State<ReportBody> {
   }
 }
 
+//Start Date
 class StartDate extends StatefulWidget {
   const StartDate({Key? key}) : super(key: key);
 
@@ -282,7 +297,7 @@ class _StartDateState extends State<StartDate> {
             child: Text(
               start,
               style: GoogleFonts.poppins(
-                color: Color.fromRGBO(186, 180, 171, 1),
+                color: Color.fromRGBO(209, 205, 199, 1),
               ),
             ),
           ),
@@ -292,21 +307,69 @@ class _StartDateState extends State<StartDate> {
   }
 }
 
+//END DATE
+class EndDate extends StatefulWidget {
+  const EndDate({Key? key}) : super(key: key);
 
+  @override
+  State<EndDate> createState() => _EndDateState();
+}
 
+class _EndDateState extends State<EndDate> {
+  DateTime endDate = now;
+  String end = "Select date";
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        border: Border.all(
+          color: Color.fromARGB(255, 31, 79, 117),
+        ),
+      ),
+      child: Column(
+        children: [
+          TextButton(
+            onPressed: () async {
+              endDate = (await showDatePicker(
+                context: context,
+                initialDate: DateTime.now(),
+                firstDate: DateTime(1990),
+                lastDate: DateTime(2023),
+              ))!;
+              setState(() {
+                end = DateFormat('MM-dd-yyyy').format(endDate);
+              });
+            },
+            child: Text(
+              end,
+              style: GoogleFonts.poppins(
+                color: Color.fromRGBO(209, 205, 199, 1),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
-//  TextButton(
-//         onPressed: () {
-//           DatePicker.showDatePicker(context,
-//               showTitleActions: true,
-//               minTime: DateTime(2018, 3, 5),
-//               maxTime: DateTime(2019, 6, 7), onChanged: (date) {
-//             print('change $date');
-//           }, onConfirm: (date) {
-//             print('confirm $date');
-//           }, currentTime: DateTime.now(), locale: LocaleType.en);
-//         },
-//         child: Text(
-//           'show date time picker (Chinese)',
-//           style: TextStyle(color: Colors.blue),
-//         ));
+class SumbitButton extends StatelessWidget {
+  const SumbitButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        child: Text(
+          "Submit",
+          style: GoogleFonts.poppins(
+            color: Color.fromRGBO(209, 205, 199, 1),
+          ),
+        ),
+        onPressed: () {},
+      ),
+    );
+  }
+}
