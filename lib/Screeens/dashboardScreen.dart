@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'applicantScreen.dart';
+import 'eventScreen.dart';
+import 'profileScreen.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -112,7 +114,10 @@ class _DashboardState extends State<Dashboard> {
                 ),
                 title: Text('Profile',
                     style: TextStyle(fontSize: 20, color: Colors.white)),
-                onTap: () => {Navigator.of(context).pop()},
+                onTap: () => {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Profile()))
+                },
               ),
               ExpansionTile(
                 key: Key(key.toString()),
@@ -240,7 +245,10 @@ class _DashboardState extends State<Dashboard> {
                 ),
                 title: Text('Event',
                     style: TextStyle(fontSize: 20, color: Colors.white)),
-                onTap: () => {Navigator.of(context).pop()},
+                onTap: () => {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Event()))
+                },
               ),
               ExpansionTile(
                 key: Key(keySetup.toString()),
@@ -583,53 +591,102 @@ class _DashboardBodyState extends State<DashboardBody> {
               ),
             ],
           ),
-          //3nd row ----------------------------------------------
+          //3rd row ----------------------------------------------
           SizedBox(
             height: 10,
           ),
-
-          Container(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-            height: 175,
-            width: 185,
-            decoration: BoxDecoration(
-                color: Color.fromRGBO(19, 22, 40, 1),
-                borderRadius: BorderRadius.all(Radius.circular(5))),
-            child: Column(
-              children: [
-                Row(
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [
-                    Icon(
-                      Icons.event,
-                      size: 50,
-                      color: Color.fromRGBO(245, 178, 26, 1),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      "Upcoming Events: ",
-                      style: GoogleFonts.poppins(
-                          color: Colors.white, fontSize: 20),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text("Events",
-                        textAlign: TextAlign.start,
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                primary: Color.fromRGBO(19, 22, 40, 1)),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: ((context) => Event())));
+            },
+            child: Container(
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+              height: 150,
+              width: 600,
+              decoration: BoxDecoration(
+                  color: Color.fromRGBO(19, 22, 40, 1),
+                  borderRadius: BorderRadius.all(Radius.circular(5))),
+              child: Column(
+                children: [
+                  Row(
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      Icon(
+                        Icons.event,
+                        size: 50,
+                        color: Color.fromRGBO(245, 178, 26, 1),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "Upcoming Events: ",
                         style: GoogleFonts.poppins(
-                            fontSize: 12, color: Colors.white)),
-                  ],
-                ),
-              ],
+                            color: Colors.white, fontSize: 20),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text("Events",
+                          textAlign: TextAlign.start,
+                          style: GoogleFonts.poppins(
+                              fontSize: 12, color: Colors.white)),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
+          // Container(
+          //   padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+          //   height: 175,
+          //   width: 185,
+          //   decoration: BoxDecoration(
+          //       color: Color.fromRGBO(19, 22, 40, 1),
+          //       borderRadius: BorderRadius.all(Radius.circular(5))),
+          //   child: Column(
+          //     children: [
+          //       Row(
+          //         // ignore: prefer_const_literals_to_create_immutables
+          //         children: [
+          //           Icon(
+          //             Icons.event,
+          //             size: 50,
+          //             color: Color.fromRGBO(245, 178, 26, 1),
+          //           ),
+          //         ],
+          //       ),
+          //       SizedBox(
+          //         height: 25,
+          //       ),
+          //       Row(
+          //         children: [
+          //           Text(
+          //             "Upcoming Events: ",
+          //             style: GoogleFonts.poppins(
+          //                 color: Colors.white, fontSize: 20),
+          //           ),
+          //         ],
+          //       ),
+          //       Row(
+          //         children: [
+          //           Text("Events",
+          //               textAlign: TextAlign.start,
+          //               style: GoogleFonts.poppins(
+          //                   fontSize: 12, color: Colors.white)),
+          //         ],
+          //       ),
+          //     ],
+          //   ),
+          // ),
           //4th row --------------------------------------
           SizedBox(
             height: 10,
