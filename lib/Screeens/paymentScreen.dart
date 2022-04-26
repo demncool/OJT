@@ -338,7 +338,19 @@ Widget PaymentTable(BuildContext context) {
                   DataCell(Text('dawdaw')),
                   DataCell(Text('awdaw')),
                   DataCell(Text('awd')),
-                  DataCell(Text('dawdwa')),
+                  DataCell(
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          primary: Color.fromRGBO(22, 158, 151, 1)),
+                      child: Text(
+                        "Update",
+                        style: GoogleFonts.poppins(
+                          fontSize: 11,
+                        ),
+                      ),
+                    ),
+                  ),
                 ]),
                 DataRow(cells: [
                   DataCell(Text('5')),
@@ -347,7 +359,19 @@ Widget PaymentTable(BuildContext context) {
                   DataCell(Text('daw')),
                   DataCell(Text('awdaw')),
                   DataCell(Text('daw')),
-                  DataCell(Text('dawdaw')),
+                  DataCell(
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          primary: Color.fromRGBO(22, 158, 151, 1)),
+                      child: Text(
+                        "Update",
+                        style: GoogleFonts.poppins(
+                          fontSize: 11,
+                        ),
+                      ),
+                    ),
+                  ),
                 ]),
                 DataRow(cells: [
                   DataCell(Text('10')),
@@ -356,7 +380,19 @@ Widget PaymentTable(BuildContext context) {
                   DataCell(Text('daw')),
                   DataCell(Text('Acdawtor')),
                   DataCell(Text('dawdwa')),
-                  DataCell(Text('daw')),
+                  DataCell(
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          primary: Color.fromRGBO(22, 158, 151, 1)),
+                      child: Text(
+                        "Update",
+                        style: GoogleFonts.poppins(
+                          fontSize: 11,
+                        ),
+                      ),
+                    ),
+                  ),
                 ]),
                 DataRow(cells: [
                   DataCell(Text('15')),
@@ -365,7 +401,19 @@ Widget PaymentTable(BuildContext context) {
                   DataCell(Text('dawdaw')),
                   DataCell(Text('dawda')),
                   DataCell(Text('dawdwa')),
-                  DataCell(Text('dwadaw')),
+                  DataCell(
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          primary: Color.fromRGBO(22, 158, 151, 1)),
+                      child: Text(
+                        "Update",
+                        style: GoogleFonts.poppins(
+                          fontSize: 11,
+                        ),
+                      ),
+                    ),
+                  ),
                 ]),
                 DataRow(cells: [
                   DataCell(Text('5')),
@@ -374,7 +422,19 @@ Widget PaymentTable(BuildContext context) {
                   DataCell(Text('dawd')),
                   DataCell(Text('dawda')),
                   DataCell(Text('daw')),
-                  DataCell(Text('dawdwad')),
+                  DataCell(
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          primary: Color.fromRGBO(22, 158, 151, 1)),
+                      child: Text(
+                        "Update",
+                        style: GoogleFonts.poppins(
+                          fontSize: 11,
+                        ),
+                      ),
+                    ),
+                  ),
                 ]),
                 DataRow(cells: [
                   DataCell(Text('5')),
@@ -383,7 +443,19 @@ Widget PaymentTable(BuildContext context) {
                   DataCell(Text('dawdwa')),
                   DataCell(Text('dwadaw')),
                   DataCell(Text('dawdaw')),
-                  DataCell(Text('wadaw')),
+                  DataCell(
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          primary: Color.fromRGBO(22, 158, 151, 1)),
+                      child: Text(
+                        "Update",
+                        style: GoogleFonts.poppins(
+                          fontSize: 11,
+                        ),
+                      ),
+                    ),
+                  ),
                 ]),
                 DataRow(cells: [
                   DataCell(Text('5')),
@@ -392,7 +464,19 @@ Widget PaymentTable(BuildContext context) {
                   DataCell(Text('dawdaw')),
                   DataCell(Text('awdawdaw')),
                   DataCell(Text('dawdaw')),
-                  DataCell(Text('dawdaw')),
+                  DataCell(
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          primary: Color.fromRGBO(22, 158, 151, 1)),
+                      child: Text(
+                        "Update",
+                        style: GoogleFonts.poppins(
+                          fontSize: 11,
+                        ),
+                      ),
+                    ),
+                  ),
                 ]),
                 DataRow(cells: [
                   DataCell(Text('5')),
@@ -401,7 +485,19 @@ Widget PaymentTable(BuildContext context) {
                   DataCell(Text('adwaa')),
                   DataCell(Text('dawdwa')),
                   DataCell(Text('dawda')),
-                  DataCell(Text('dawdawdwa')),
+                  DataCell(
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          primary: Color.fromRGBO(22, 158, 151, 1)),
+                      child: Text(
+                        "Update",
+                        style: GoogleFonts.poppins(
+                          fontSize: 11,
+                        ),
+                      ),
+                    ),
+                  ),
                 ]),
                 DataRow(cells: [
                   DataCell(Text('5')),
@@ -410,7 +506,19 @@ Widget PaymentTable(BuildContext context) {
                   DataCell(Text('dwa')),
                   DataCell(Text('dawdaw')),
                   DataCell(Text('daw')),
-                  DataCell(Text('dwa')),
+                  DataCell(
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          primary: Color.fromRGBO(22, 158, 151, 1)),
+                      child: Text(
+                        "Update",
+                        style: GoogleFonts.poppins(
+                          fontSize: 11,
+                        ),
+                      ),
+                    ),
+                  ),
                 ]),
                 DataRow(cells: [
                   DataCell(Text('5')),
@@ -419,25 +527,19 @@ Widget PaymentTable(BuildContext context) {
                   DataCell(Text('dawdwa')),
                   DataCell(Text('daw')),
                   DataCell(Text('daw')),
-                  DataCell(Text('dwa')),
-                ]),
-                DataRow(cells: [
-                  DataCell(Text('5')),
-                  DataCell(Text('dwadwa')),
-                  DataCell(Text('daw')),
-                  DataCell(Text('dawdwa')),
-                  DataCell(Text('daw')),
-                  DataCell(Text('daw')),
-                  DataCell(Text('dwa')),
-                ]),
-                DataRow(cells: [
-                  DataCell(Text('5')),
-                  DataCell(Text('dwadwa')),
-                  DataCell(Text('daw')),
-                  DataCell(Text('dawdwa')),
-                  DataCell(Text('daw')),
-                  DataCell(Text('daw')),
-                  DataCell(Text('dwa')),
+                  DataCell(
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          primary: Color.fromRGBO(22, 158, 151, 1)),
+                      child: Text(
+                        "Update",
+                        style: GoogleFonts.poppins(
+                          fontSize: 11,
+                        ),
+                      ),
+                    ),
+                  ),
                 ]),
               ],
             ),

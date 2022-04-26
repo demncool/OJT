@@ -14,22 +14,24 @@ class Timeline extends StatefulWidget {
 class _TimelineState extends State<Timeline> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(19, 22, 40, 1),
-        title: Row(
-          children: [
-            Image.asset(
-              "assets/images/hogLogo.jpg",
-              height: 50,
-              // fit: BoxFit.scaleDown,
-            ),
-            Padding(padding: EdgeInsets.fromLTRB(10, 0, 0, 0)),
-            Text("Timeline"),
-          ],
+    return Expanded(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Color.fromRGBO(19, 22, 40, 1),
+          title: Row(
+            children: [
+              Image.asset(
+                "assets/images/hogLogo.jpg",
+                height: 50,
+                // fit: BoxFit.scaleDown,
+              ),
+              Padding(padding: EdgeInsets.fromLTRB(10, 0, 0, 0)),
+              Text("Timeline"),
+            ],
+          ),
         ),
+        body: TimelineBody(),
       ),
-      body: TimelineBody(),
     );
   }
 }
@@ -152,7 +154,7 @@ class _TimelineBodyState extends State<TimelineBody> {
                           border: UnderlineInputBorder(),
                           hintText: 'Type Message...',
                           hintStyle: TextStyle(
-                              color: Color.fromARGB(209, 205, 199, 1)),
+                              color: Color.fromRGBO(186, 180, 171, 1)),
                         ),
                       ),
                     )

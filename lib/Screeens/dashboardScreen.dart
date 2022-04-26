@@ -10,7 +10,7 @@ import 'package:application/Screeens/timelineScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'applicantScreen.dart';
+import 'member/applicantScreen.dart';
 import 'eventScreen.dart';
 import 'profileScreen.dart';
 
