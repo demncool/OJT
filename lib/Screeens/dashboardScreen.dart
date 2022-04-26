@@ -6,6 +6,7 @@ import 'package:application/Screeens/announcementScreen.dart';
 import 'package:application/Screeens/loginScreen.dart';
 import 'package:application/Screeens/paymentScreen.dart';
 import 'package:application/Screeens/reportScreen.dart';
+import 'package:application/Screeens/setup/accessRight.dart';
 import 'package:application/Screeens/timelineScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -272,9 +273,10 @@ class _DashboardState extends State<Dashboard> {
                       title: Text('Access Right',
                           style: TextStyle(fontSize: 15, color: Colors.white)),
                       onTap: () {
-                        setState(() {
-                          collapse();
-                        });
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AccessRights()));
                       },
                     ),
                   ),
