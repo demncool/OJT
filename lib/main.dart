@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors
-import 'package:application/Screeens/loginScreen.dart';
-import 'package:flutter/material.dart';
 
-import 'Screeens/loginScreen.dart';
+import 'package:application/Screeens/splash.dart';
+import 'package:flutter/material.dart';
 
 void main() => runApp(App());
 
@@ -13,7 +12,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'OJT',
-      home: Login(),
+      home: SplashScreen(),
     );
   }
 }
